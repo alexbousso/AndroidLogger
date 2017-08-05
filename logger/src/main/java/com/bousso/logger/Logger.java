@@ -18,50 +18,50 @@ public class Logger {
     }
 
     public void trace(String message) {
-        syncher.write(LogLevel.Trace, message, component);
+        syncher.write(new LogMessage(LogLevel.Trace, message, component));
     }
 
     public void debug(String message) {
-        syncher.write(LogLevel.Debug, message, component);
+        syncher.write(new LogMessage(LogLevel.Debug, message, component));
     }
 
     public void verbose(String message) {
-        syncher.write(LogLevel.Verbose, message, component);
+        syncher.write(new LogMessage(LogLevel.Verbose, message, component));
     }
 
     public void warning(String message) {
-        syncher.write(LogLevel.Warning, message, component);
+        syncher.write(new LogMessage(LogLevel.Warning, message, component));
     }
 
     public void error(String message) {
-        syncher.write(LogLevel.Error, message, component);
+        syncher.write(new LogMessage(LogLevel.Error, message, component));
     }
 
     public void critical(String message) {
-        syncher.write(LogLevel.Critical, message, component);
+        syncher.write(new LogMessage(LogLevel.Critical, message, component));
     }
 
     public void trace(String message, Error error) {
-        syncher.write(LogLevel.Trace, message, component, error);
+        syncher.write(new LogMessage(LogLevel.Trace, message, component, error));
     }
 
     public void debug(String message, Error error) {
-        syncher.write(LogLevel.Debug, message, component, error);
+        syncher.write(new LogMessage(LogLevel.Debug, message, component, error));
     }
 
     public void verbose(String message, Error error) {
-        syncher.write(LogLevel.Verbose, message, component, error);
+        syncher.write(new LogMessage(LogLevel.Verbose, message, component, error));
     }
 
     public void warning(String message, Error error) {
-        syncher.write(LogLevel.Warning, message, component, error);
+        syncher.write(new LogMessage(LogLevel.Warning, message, component, error));
     }
 
     public void error(String message, Error error) {
-        syncher.write(LogLevel.Error, message, component, error);
+        syncher.write(new LogMessage(LogLevel.Error, message, component, error));
     }
 
     public void critical(String message, Error error) {
-        syncher.write(LogLevel.Critical, message, component, error);
+        syncher.write(new LogMessage(LogLevel.Critical, message, component, error));
     }
 }
