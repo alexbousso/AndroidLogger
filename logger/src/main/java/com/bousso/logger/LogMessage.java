@@ -1,8 +1,7 @@
 package com.bousso.logger;
 
-/**
- * Created by alex on 05/08/17.
- */
-
 class LogMessage {
+    public LogMessage(String message, String component) {}
+
+    public LogMessage(String message, String component, Error error) {}
 }
