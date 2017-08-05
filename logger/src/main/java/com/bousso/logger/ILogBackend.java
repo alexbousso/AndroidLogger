@@ -5,7 +5,7 @@ package com.bousso.logger;
  */
 
 public interface ILogBackend {
-    void write(LogLevel level, LogMessage message);
+    void write(LogMessage message);
     void flush();
     void close();
 }
