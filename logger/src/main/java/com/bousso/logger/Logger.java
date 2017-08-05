@@ -6,60 +6,62 @@ package com.bousso.logger;
 
 public class Logger {
     private String component;
+    private LogSynchronizer syncher;
 
     public Logger(String component) {
         this.component = component;
+        syncher = LogSynchronizer.getInstance();
     }
 
     public Logger(Class component) {
-        this.component = component.getName();
+        this(component.getName());
     }
 
     public void trace(String message) {
-        LogSynchronizer.trace(new LogMessage(message, component));
+        syncher.write(LogLevel.Trace, message, component);
     }
 
     public void debug(String message) {
-        LogSynchronizer.debug(new LogMessage(message, component));
+        syncher.write(LogLevel.Debug, message, component);
     }
 
     public void verbose(String message) {
-        LogSynchronizer.verbose(new LogMessage(message, component));
+        syncher.write(LogLevel.Verbose, message, component);
     }
 
     public void warning(String message) {
-        LogSynchronizer.warning(new LogMessage(message, component));
+        syncher.write(LogLevel.Warning, message, component);
     }
 
     public void error(String message) {
-        LogSynchronizer.error(new LogMessage(message, component));
+        syncher.write(LogLevel.Error, message, component);
     }
 
     public void critical(String message) {
-        LogSynchronizer.critical(new LogMessage(message, component));
+        syncher.write(LogLevel.Critical, message, component);
     }
 
     public void trace(String message, Error error) {
-        LogSynchronizer.trace(new LogMessage(message, component, error));
+        syncher.write(LogLevel.Trace, message, component, error);
     }
 
     public void debug(String message, Error error) {
-        LogSynchronizer.debug(new LogMessage(message, component, error));
+        syncher.write(LogLevel.Debug, message, component, error);
     }
 
     public void verbose(String message, Error error) {
-        LogSynchronizer.verbose(new LogMessage(message, component, error));
+        syncher.write(LogLevel.Verbose, message, component, error);
     }
 
     public void warning(String message, Error error) {
-        LogSynchronizer.warning(new LogMessage(message, component, error));
+        syncher.write(LogLevel.Warning, message, component, error);
     }
 
     public void error(String message, Error error) {
-        LogSynchronizer.error(new LogMessage(message, component, error));
+        syncher.write(LogLevel.Error, message, component, error);
     }
 
     public void critical(String message, Error error) {
-        LogSynchronizer.critical(new LogMessage(message, component, error));
+        syncher.write(LogLevel.Critical, message, component, error);
     }
 }
